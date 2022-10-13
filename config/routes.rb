@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get '/questions', to: 'questions#index'
+  resources :questions, only: %i[index new edit create]
   
-  get '/questions/new', to: 'questions#new'
-
-  post '/questions', to: 'questions#create'
-
   root 'pages#index'
 end
